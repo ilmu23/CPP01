@@ -65,6 +65,6 @@ static inline void	_replace(std::string &line, std::string &s1, std::string &s2)
 	while (match != std::string::npos)
 	{
 		line = line.substr(0, match) + s2 + line.substr(match + s1.length(), line.length());
-		match = line.find(s1, match);
+		match = line.find(s1, match + s2.length());
 	}
 }
